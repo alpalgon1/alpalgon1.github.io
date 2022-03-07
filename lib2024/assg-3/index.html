@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="HTML, HTML5, HTML Forms, Forms, ">
+	<!-- meta keywords is considered the most important tag for SEO  -->
+	<title>HTML Forms</title>
+</head>
+<body>
+	<div id="wrapper" class="wrapper">
+		<section>
+			<!-- Form requires two attributes for it to be valid
+				action - is the page where the data goes when the form is submitted 
+				method - is how the data reaches its destination 
+				Two methods are: 
+				get(default) - this sends informatiom via query string and appends it to the end of address 
+				post - sends the data in encrypted package
+			 -->
+			 <!--Form tag starts here-->
+			<form action="somepage.php" method="get">
+				<div id="form-container" class="form-elm">
+					<!-- An input element must be accompanied by a label 
+						A label has an attribute "for" which is used to connect it with the input element it is labelling
+						value of for attribute is same as the value for name attribute of the input element
+						Note: for HTML5 the value of for attribute must be equal to the id of the element 
+					-->
+					<label for="FirstName">First name</label>
+					<!-- a form input element must have two attributes:
+						Type : this determines the input type ex: text, password, number etc. 
+						name: is the unique identification for this input when data is submitted to the server mentioned in the action attribute of the Form-->
+					<input type="text" name="FirstName" id="FirstName" placeholder="First name goes here">
+					<!-- Other attribute of input element are: 
+						placeholder:the placeholder attribute is pseudo text shown to the user before they start inputting, as soon as the user starts typing, this text disappears
+					 -->
+				</div>
+				<div id="In-container" class="form-elm">
+					<label for="LastName">Last Name</label>
+					<input type="text" name="LastName" id="LastName" placeholder="Enter your Last Name here">
+				</div>
+				<div id="email-container" class="form-elm">
+					<label for="email">Email</label>
+					<!-- value attribute saves the input and submits it to the server
+					value attribute is permanent and would not dissapear when the user starts inputting
+					 -->
+					 <!-- HTML5 validates input given in an email input field, it must contain a @ symbol to be valid -->
+					 <!-- readonly attribute makes the field read only, therefore the user cannot make a change to it -->
+					<input type="email" name="email" id="email" value="example@alp.com" readonly>
+				</div>
+				<div id="pass-container" class="form-elm">
+					<label for="pass">Password</label>
+					<!-- input type ="password" is used to create password inputs
+					- the value written in this input type is hidden
+					- instead of showing up as text, the browser displays it as dots
+					 -->
+					 <!-- required attribute is used to make this input required, therefore the browser won't let the user submit without adding this value -->
+					<input type="Password" name="pass" id="pass" required>
+				</div>
+				<div id="sum-container" class="form-elm">
+					<label for="summary">Introductory Text</label>
+					<!-- A textarea lets you submit information that is more than one line -->
+					<!-- The information submitted will correspond in the server -->
+					<!-- Textarea preserves line breaks while submitting to the server -->
+					<textarea name="summary" id="summary" placeholder="Enter summary here">This is the value of text area</textarea>
+				</div>
+				<div id="st-container" class="form-elm">
+					<!-- input type="date" will create a date picker for the user -->
+					<!-- Also, the value is validated as per HTML5 for being an actual date -->
+					<label for="dte">Date of Birth</label>
+					<input type="date" name="dte" id="dte"><br>
+					<label for="num">Mobile Number</label>
+					<!--  input type number is used to input numbers
+						Additonal attributes for input type number are : 
+						min, max
+					-->
+					<input type="number" id="num" name="num" min="-4" max="20" required><br>
+				</div>
+				<!-- input type radio are singular value checkboxes, which means the user can select only one value -->
+						<!-- radio elements belonging to the same group share the names -->
+						<!-- the unique identification is id attribute -->
+						<!-- checked attribute for input type radio makes it checked by default -->
+				<div id="radio-container" class="form-elm">
+					<p>Gender</p>
+					<label for="female">
+						<input type="radio" name="gender" id="female" value="female" checked>Female
+					</label>
+					<label>
+						<input type="radio" name="gender" id="male" value="male">Male
+					</label>
+				</div>
+				<!-- fieldset creates a segment inside the form -->
+				<!-- it is used to create group of input types and have them displayed in a box -->
+				<!-- the fieldset will be read by the SEO crawler as a whole, meaning all the values of filedset is used to determine the overall rank of the page -->
+					<fieldset>
+						<!-- Legend is the title of fieldset -->
+						<legend>Mailing Address</legend>
+						<div>
+							<label for="address">Address:</label>
+							<input type="text" name="address" id="address">
+						</div>
+						<div>
+							<label for="city">City:</label>
+							<input type="text" name="city" id="city">
+						</div>
+						<div>
+							<label for="Province">Province</label>
+							<!-- select element is used to create dropdowns in HTML -->
+					<!-- select comes paired with <options> -->
+					<!-- The vlaue of the selected option gets submitted to the server -->
+							<select id="Province" name="Province">
+								<!-- optgroup or option group is used to create groups in a select element -->
+								<optgroup label="Province">
+									<option value="Ontario">Ontario</option>
+									<option value="Quebec">Quebec</option>
+									<!-- selected attribute makes an option selected by default -->
+									<option value="Manitoba" selected>Manitoba</option>
+								</optgroup>
+								<optgroup label="Territories">
+									<option value="Northwest">Northwest Territories</option>
+									<option value="Nunavut">Nunavut</option>
+									<option value="Yukon">Yukon</option>
+								</optgroup>
+							</select>
+						</div>
+						<div>
+							<label for="Country">Country</label>
+ 							<select id="Country" name="Country">
+ 								<optgroup label="Europe">
+ 									<option value="England">England</option>
+ 									<option value="France">France</option>
+ 									<option value="Spain">Spain</option>
+ 								</optgroup>
+ 								<optgroup label="America">
+ 									<option value="Brasil">Brasil</option>
+ 									<option value="Canada" selected>Canada</option>
+ 									<option value="Usa">USA</option>
+ 								</optgroup>
+ 							</select>
+						</div>
+						<div>
+							<label for="postal-code">Postal Code</label>
+							<input type="text" name="postal-code" id="postal-code">
+						</div>
+					</fieldset>
+					<div id="hobbies-container" class="form-elm">
+						<h2>Hobbies/Interests</h2>
+						<label for="biking">Biking</label>
+						<input type="checkbox" name="hobbies" id="biking"><br>
+						<label for="hiking">Hiking</label>
+						<input type="checkbox" name="hobbies" id="hiking"><br>
+						<label for="painting">Painting</label>
+						<input type="checkbox" name="hobbies" id="painting" value="painting" checked>
+					</div>
+					<div id="ur-container" class="form-elm">
+						<label for="ur">Website:</label>
+						<!-- input type url is validated in HTML5 -->
+					<!-- The browser won't let the user submit a value that is not a url, i.e. it does not contain http or https -->
+						<input type="url" name="ur" id="ur" placeholder="www.example.com"><br>
+					</div>
+					<!-- button type="submit" creates a button that submits the form and HTML5 elements get automatically validated by the browser -->
+					<button type="submit">Submit</button>
+					<!-- button type="reset" resets the form values, without needing to refresh the page -->
+					<button type="reset">Reset</button>
+					<!--Form ends-->
+			</form>
+		</section>
+	</div>
+</body>
+</html>
