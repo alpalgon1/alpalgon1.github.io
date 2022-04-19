@@ -1,0 +1,148 @@
+@charset "utf-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+/*Mobile*/
+/*.col-main, .col-footer img {
+	width: 100%;
+}*/
+
+body {
+	width: 1024px;
+	height: 1450px;
+}
+@font-face {
+    font-family: 'balooregular';
+    src: url('fonts.css/Baloo-Regular-webfont.eot');
+    src: url('fonts.css/Baloo-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts.css/Baloo-Regular-webfont.woff2') format('woff2'),
+         url('fonts.css/Baloo-Regular-webfont.woff') format('woff'),
+         url('fonts.css/Baloo-Regular-webfont.ttf') format('truetype'),
+         url('fonts.css/Baloo-Regular-webfont.svg#balooregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.logo {
+	font-family: "CooperHewitt-Heavy";
+	color: #72a9ae;
+}
+.title {
+	color: #72a9ae;
+}
+.footer-title {
+	color: white;
+}
+.logo{
+	margin-left: 40px;
+	padding: 20px;
+}
+
+
+.main {
+	background-image: url(../img/dynamic-style.webp);
+}
+
+.footer {
+	background-color: #454545;
+}
+.logo-container {
+	background-color: #ffffff;
+	width: 100%;
+	height: 110px;
+}
+.main-navigation {
+	width: 100%;
+	height: 40px;
+	background-color: #72a9ae;
+}
+.main-navigation ul {
+	margin-left: 40px;
+}
+.main-navigation ul li {
+	list-style: none;
+	display: inline-block;
+	float: left;
+	line-height: 40px;
+	padding: 0 20px;
+}
+.main-navigation ul li a {
+	display: block;
+	text-decoration: none;
+	font-size: 14px;
+	text-decoration-color: #72a9ae;
+	font-family: CooperHewitt-Heavy;
+}
+.main-navigation ul li a:hover {
+	color: red;
+}
+.hamburger {
+	float: right;
+}
+.hamburger {
+	height: 15px;
+	margin: 15px;
+	padding-top: 5px;
+	position: relative;
+	float: right;
+	cursor: pointer;
+}
+.hamburger, .hamburger:before, .hamburger:after {
+	width: 30px;
+	border-top: 5px solid black;
+}
+.hamburger:before {
+	content: "";
+	display: block;
+	position: absolute;
+}
+.hamburger:after {
+	content: "";
+	display: block;
+	background: black;
+	position: absolute;
+	bottom: 0;
+}
+
+.mobile-nav {
+	width: 100%;
+	clear: both;
+	position: absolute;
+	display: none;
+}
+.mobile-nav-container {
+	position: relative;
+	clear: both;
+}
+.mobile-nav li {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
+	background: lightblue;
+	border-bottom: 2px solid #121212;
+}
+.main-content {
+	width: 50%;
+}
+
+table {
+	width: 900px;
+	height: 220px;
+}
+table, th, td {
+	border: 1px solid #000;
+	border-collapse: collapse;
+}
+footer {
+	padding: 15px;
+	width: 100%;
+	box-sizing: border-box;
+}
+.col-footer {
+	width: 31%;
+	box-sizing: border-box;
+	float: left;
+}
